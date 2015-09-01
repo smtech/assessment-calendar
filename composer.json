@@ -1,0 +1,13 @@
+{
+    "name": "smtech/assessment-calendar",
+    "description": "A student-specific assessment calendar",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Seth Battis",
+            "email": "sethbattis@stmarksschool.org"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
