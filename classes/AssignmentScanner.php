@@ -64,7 +64,8 @@ class AssignmentScanner /*extends \Battis\AutoCrontabJob*/ {
 				if (preg_match('/test/i', $assignment['name'])) {
 					
 					/* ...add this assignment to the list of assessments */
-					$this->env->sql->query("INSERT INTO `assignments` (`id`, `data`) VALUES ('{$assignment['id']}', '" . $this->env->sql->real_escape_string(serialize($assignment)) . "')");
+					$this->env->sql->query("INSERT INTO `courses` (`id`, `data`) VALUES ('{$course['id']}', '" . $this->env->sql->real_escape_string(serialize($course)) . "')");
+					$this->env->sql->query("INSERT INTO `assessments` (`id`, `course`, `data`) VALUES ('{$assignment['id']}', '{$course['id']}', '" . $this->env->sql->real_escape_string(serialize($assignment)) . "')");
 
 					/* walk through all of the due dates for this assignment... */
 					$base = false;
@@ -85,7 +86,7 @@ class AssignmentScanner /*extends \Battis\AutoCrontabJob*/ {
 								foreach($sections[$date['title']]['students'] as $assignee) {
 									if (!in_array($assignee['id'], $assignees)) {
 										$this->env->sql->query("INSERT INTO `students` (`id`, `data`) VALUES ('{$assignee['id']}', '" . $this->env->sql->real_escape_string(serialize($assignee)) . "')");
-										$this->env->sql->query("INSERT INTO `due_dates` (`assignment`, `student`, `due`) VALUES ('{$assignment['id']}', '{$assignee['id']}', '{$date['due_at']}')");
+										$this->env->sql->query("INSERT INTO `due_dates` (`assessment`, `student`, `due`) VALUES ('{$assignment['id']}', '{$assignee['id']}', '{$date['due_at']}')");
 										$assignees[] = $assignee['id']; /* note that we've added all these students */
 									}
 								}
@@ -97,7 +98,7 @@ class AssignmentScanner /*extends \Battis\AutoCrontabJob*/ {
 								foreach ($sections[$students[$date['title']]]['students'] as $assignee) {
 									if ($assignee['name'] == $date['title']) {
 										$this->env->sql->query("INSERT INTO `students` (`id`, `data`) VALUES ('{$assignee['id']}', '" . $this->env->sql->real_escape_string(serialize($assignee)) . "')");
-										$this->env->sql->query("INSERT INTO `due_dates` (`assignment`, `student`, `due`) VALUES ('{$assignment['id']}', '{$assignee['id']}', '{$date['due_at']}')");
+										$this->env->sql->query("INSERT INTO `due_dates` (`assessment`, `student`, `due`) VALUES ('{$assignment['id']}', '{$assignee['id']}', '{$date['due_at']}')");
 										$assignees[] = $assignee['id'];
 										break;
 									}
@@ -112,7 +113,7 @@ class AssignmentScanner /*extends \Battis\AutoCrontabJob*/ {
 							foreach ($section['students'] as $assignee) {
 								if (!in_array($assignee['id'], $assignees)) {
 									$this->env->sql->query("INSERT INTO `students` (`id`, `data`) VALUES ('{$assignee['id']}', '" . $this->env->sql->real_escape_string(serialize($assignee)) . "')");
-									$this->env->sql->query("INSERT INTO `due_dates` (`assignment`, `student`, `due`) VALUES ('{$assignment['id']}', '{$assignee['id']}', '{$base['due_at']}')");
+									$this->env->sql->query("INSERT INTO `due_dates` (`assessment`, `student`, `due`) VALUES ('{$assignment['id']}', '{$assignee['id']}', '{$base['due_at']}')");
 									$assignees[] = $assignee['id'];
 								}
 							}

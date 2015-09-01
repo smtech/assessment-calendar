@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "17d87a1a3ee3551720898db6cab79885",
+    "hash": "1bdb40090dd27b390d847d97d4171efc",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -150,6 +150,39 @@
             "description": "A proper REST client for PHP.",
             "homepage": "https://github.com/educoder/pest",
             "time": "2015-08-17 19:12:55"
+        },
+        {
+            "name": "battis/simplecache",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/battis/simplecache.git",
+                "reference": "0cb75651240fe0d3037ad8557f6a4fbc35bc8e71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/battis/simplecache/zipball/0cb75651240fe0d3037ad8557f6a4fbc35bc8e71",
+                "reference": "0cb75651240fe0d3037ad8557f6a4fbc35bc8e71",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "seth@battis.net"
+                }
+            ],
+            "description": "Manage a simple cache backed by a MySQL database",
+            "time": "2015-08-13 19:32:36"
         },
         {
             "name": "educoder/pest",
