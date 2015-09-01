@@ -1,7 +1,7 @@
 <?php
 
 /* some sample app metadata information -- review config.xml for a panoply of options */
-$metadata['APP_DESCRIPTION'] = 'A starter app for building an LTI that makes use of the Canvas APIs.';
+$metadata['APP_DESCRIPTION'] = 'A student-specific assessment calendar';
 $metadata['APP_DOMAIN'] = '';
 $metadata['APP_ICON_URL'] = '@APP_URL/lti/icon.png';
 $metadata['APP_LAUNCH_URL'] = '@APP_URL/lti/launch.php';
@@ -14,7 +14,7 @@ $metadata['COURSE_NAVIGATION_ENABLED'] = 'true'; # /true|false/
 $metadata['COURSE_NAVIGATION_ICON_URL'] = '@APP_ICON_URL';
 $metadata['COURSE_NAVIGATION_LAUNCH_URL'] = '@APP_LAUNCH_URL';
 $metadata['COURSE_NAVIGATION_LINK_TEXT'] = '@APP_NAME';
-$metadata['COURSE_NAVIGATION_VISIBILITY'] = 'public'; # /public|members|admins/
+$metadata['COURSE_NAVIGATION_VISIBILITY'] = 'admins'; # /public|members|admins/
 $metadata['CUSTOM_FIELDS'] = true; # is_bool()
 $metadata['CUSTOM_FIELD_debug'] = 'true'; # /true|false/
 $metadata['EDITOR_BUTTON'] = false; # is_bool()

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "45ee147b00c90d59d0df828665a96170",
+    "hash": "17d87a1a3ee3551720898db6cab79885",
     "packages": [
         {
             "name": "battis/appmetadata",
@@ -38,6 +38,76 @@
             ],
             "description": "An object to store app metadata backed by a MySQL table",
             "time": "2015-08-17 19:58:28"
+        },
+        {
+            "name": "battis/autocrontabjob",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/battis/autocrontabjob.git",
+                "reference": "911e3f3bcb522ad36d7707bf7cd4f1d74d6cc242"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/battis/autocrontabjob/zipball/911e3f3bcb522ad36d7707bf7cd4f1d74d6cc242",
+                "reference": "911e3f3bcb522ad36d7707bf7cd4f1d74d6cc242",
+                "shasum": ""
+            },
+            "require": {
+                "pear/log": "~1.0",
+                "tiben/crontab-manager": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Battis\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "seth@battis.net"
+                }
+            ],
+            "description": "An object-oriented approach to scheduling regular cron jobs automatically",
+            "time": "2015-08-11 17:57:29"
+        },
+        {
+            "name": "battis/data-utilities",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/battis/data-utilities.git",
+                "reference": "14f3d457ebc7b661c4c42596d0567dc85bab9e2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/battis/data-utilities/zipball/14f3d457ebc7b661c4c42596d0567dc85bab9e2a",
+                "reference": "14f3d457ebc7b661c4c42596d0567dc85bab9e2a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Battis\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Seth Battis",
+                    "email": "sethbattis@stmarksschool.org"
+                }
+            ],
+            "description": "A handful of useful helper functions to process data",
+            "time": "2015-08-27 20:31:48"
         },
         {
             "name": "battis/educoder-pest-fork",
@@ -237,12 +307,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "643e6784e8d07154e88eff1ea43b2cd66a6051ae"
+                "reference": "bfcffb009aa8ead7e77290115d5c9d652588b3e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/643e6784e8d07154e88eff1ea43b2cd66a6051ae",
-                "reference": "643e6784e8d07154e88eff1ea43b2cd66a6051ae",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/bfcffb009aa8ead7e77290115d5c9d652588b3e4",
+                "reference": "bfcffb009aa8ead7e77290115d5c9d652588b3e4",
                 "shasum": ""
             },
             "require": {
@@ -284,20 +354,20 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-08-06 19:42:20"
+            "time": "2015-09-01 00:52:09"
         },
         {
             "name": "smtech/canvaspest",
-            "version": "v1.0.1",
+            "version": "v1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/canvaspest.git",
-                "reference": "204e6a8fe3a1a21dcbe594dec5b342de48e2ed1e"
+                "reference": "fd29f4b62b500ee3016efe56f2324829f3cfd725"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/204e6a8fe3a1a21dcbe594dec5b342de48e2ed1e",
-                "reference": "204e6a8fe3a1a21dcbe594dec5b342de48e2ed1e",
+                "url": "https://api.github.com/repos/smtech/canvaspest/zipball/fd29f4b62b500ee3016efe56f2324829f3cfd725",
+                "reference": "fd29f4b62b500ee3016efe56f2324829f3cfd725",
                 "shasum": ""
             },
             "require": {
@@ -320,7 +390,7 @@
                 }
             ],
             "description": "An extension of Pest to make RESTful queries to the Instructure Canvas API",
-            "time": "2015-08-17 16:44:57"
+            "time": "2015-08-22 01:41:57"
         },
         {
             "name": "smtech/oauth-negotiator",
@@ -359,12 +429,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarks-colors.git",
-                "reference": "978be1b0f711d0ab03f7ce15cfafddce60b12676"
+                "reference": "efbcce5b1a9289dfa64ba33d385613b7cbc93a8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarks-colors/zipball/978be1b0f711d0ab03f7ce15cfafddce60b12676",
-                "reference": "978be1b0f711d0ab03f7ce15cfafddce60b12676",
+                "url": "https://api.github.com/repos/smtech/stmarks-colors/zipball/efbcce5b1a9289dfa64ba33d385613b7cbc93a8a",
+                "reference": "efbcce5b1a9289dfa64ba33d385613b7cbc93a8a",
                 "shasum": ""
             },
             "type": "library",
@@ -384,7 +454,7 @@
                 }
             ],
             "description": "An object-ified, consistent set of hex colors for St. Mark’s projects",
-            "time": "2015-08-08 01:30:39"
+            "time": "2015-08-20 20:17:08"
         },
         {
             "name": "smtech/stmarkssmarty",
@@ -392,17 +462,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarkssmarty.git",
-                "reference": "da58710978039498054117bcbd24734e2bda4b54"
+                "reference": "71e3cc71a1f81c2b8bdb298b53bc183728c66af9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/da58710978039498054117bcbd24734e2bda4b54",
-                "reference": "da58710978039498054117bcbd24734e2bda4b54",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/71e3cc71a1f81c2b8bdb298b53bc183728c66af9",
+                "reference": "71e3cc71a1f81c2b8bdb298b53bc183728c66af9",
                 "shasum": ""
             },
             "require": {
+                "battis/data-utilities": "dev-master",
                 "smarty/smarty": "3.1.*",
                 "smtech/stmarks-colors": "dev-master"
+            },
+            "suggest": {
+                "battis/appmetadata": "MySQL-backed globals array for app metadata storage",
+                "eternicode/bootstrap-datepicker": "The full Bootstrap Datepicker package for local install"
             },
             "type": "library",
             "autoload": {
@@ -421,7 +496,7 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2015-08-08 01:47:07"
+            "time": "2015-08-26 19:31:34"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",
@@ -442,6 +517,46 @@
                 }
             ],
             "homepage": "http://spvsoftwareproducts.com/php/lti_tool_provider/"
+        },
+        {
+            "name": "tiben/crontab-manager",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TiBeN/CrontabManager.git",
+                "reference": "e0e12c94e8b065ed07811b65f00d3fb00eab003e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TiBeN/CrontabManager/zipball/e0e12c94e8b065ed07811b65f00d3fb00eab003e",
+                "reference": "e0e12c94e8b065ed07811b65f00d3fb00eab003e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TiBeN\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Legendre",
+                    "email": "legendre.benjamin@gmail.com"
+                }
+            ],
+            "description": "A library for managing linux cron jobs.",
+            "keywords": [
+                "crontab",
+                "scheduling"
+            ],
+            "time": "2014-05-17 15:12:24"
         }
     ],
     "packages-dev": [],
