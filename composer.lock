@@ -5,19 +5,20 @@
         "This file is @generated automatically"
     ],
     "hash": "1bdb40090dd27b390d847d97d4171efc",
+    "content-hash": "2e905a9310ab42827cefa7baf4dd0cb5",
     "packages": [
         {
             "name": "battis/appmetadata",
-            "version": "v1.1.1",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/appmetadata.git",
-                "reference": "99d3cbd11d615e94355f409de88240752e906ee7"
+                "reference": "a97bdc20627008ed165b638737b618a0d6f606c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/appmetadata/zipball/99d3cbd11d615e94355f409de88240752e906ee7",
-                "reference": "99d3cbd11d615e94355f409de88240752e906ee7",
+                "url": "https://api.github.com/repos/battis/appmetadata/zipball/a97bdc20627008ed165b638737b618a0d6f606c2",
+                "reference": "a97bdc20627008ed165b638737b618a0d6f606c2",
                 "shasum": ""
             },
             "type": "library",
@@ -37,7 +38,7 @@
                 }
             ],
             "description": "An object to store app metadata backed by a MySQL table",
-            "time": "2015-08-17 19:58:28"
+            "time": "2015-10-22 20:25:29"
         },
         {
             "name": "battis/autocrontabjob",
@@ -82,12 +83,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/data-utilities.git",
-                "reference": "14f3d457ebc7b661c4c42596d0567dc85bab9e2a"
+                "reference": "2675320d7b9099c0689a6db9e2262ea70d40742f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/data-utilities/zipball/14f3d457ebc7b661c4c42596d0567dc85bab9e2a",
-                "reference": "14f3d457ebc7b661c4c42596d0567dc85bab9e2a",
+                "url": "https://api.github.com/repos/battis/data-utilities/zipball/2675320d7b9099c0689a6db9e2262ea70d40742f",
+                "reference": "2675320d7b9099c0689a6db9e2262ea70d40742f",
                 "shasum": ""
             },
             "type": "library",
@@ -107,7 +108,7 @@
                 }
             ],
             "description": "A handful of useful helper functions to process data",
-            "time": "2015-08-27 20:31:48"
+            "time": "2015-10-11 14:54:59"
         },
         {
             "name": "battis/educoder-pest-fork",
@@ -153,16 +154,16 @@
         },
         {
             "name": "battis/simplecache",
-            "version": "v1.1",
+            "version": "v1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/simplecache.git",
-                "reference": "0cb75651240fe0d3037ad8557f6a4fbc35bc8e71"
+                "reference": "2116d33def68ebf3d2a2ad4afd2970077115d801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/simplecache/zipball/0cb75651240fe0d3037ad8557f6a4fbc35bc8e71",
-                "reference": "0cb75651240fe0d3037ad8557f6a4fbc35bc8e71",
+                "url": "https://api.github.com/repos/battis/simplecache/zipball/2116d33def68ebf3d2a2ad4afd2970077115d801",
+                "reference": "2116d33def68ebf3d2a2ad4afd2970077115d801",
                 "shasum": ""
             },
             "type": "library",
@@ -182,7 +183,7 @@
                 }
             ],
             "description": "Manage a simple cache backed by a MySQL database",
-            "time": "2015-08-13 19:32:36"
+            "time": "2015-10-05 15:13:09"
         },
         {
             "name": "educoder/pest",
@@ -340,12 +341,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "bfcffb009aa8ead7e77290115d5c9d652588b3e4"
+                "reference": "e0fc310b6e52d2246cf07fd800ac4a70252bc6c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/bfcffb009aa8ead7e77290115d5c9d652588b3e4",
-                "reference": "bfcffb009aa8ead7e77290115d5c9d652588b3e4",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/e0fc310b6e52d2246cf07fd800ac4a70252bc6c3",
+                "reference": "e0fc310b6e52d2246cf07fd800ac4a70252bc6c3",
                 "shasum": ""
             },
             "require": {
@@ -387,7 +388,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-09-01 00:52:09"
+            "time": "2015-11-25 20:19:23"
         },
         {
             "name": "smtech/canvaspest",
@@ -495,12 +496,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smtech/stmarkssmarty.git",
-                "reference": "71e3cc71a1f81c2b8bdb298b53bc183728c66af9"
+                "reference": "2940435c1d5f28e13ff38bdda07e05a01b20291d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/71e3cc71a1f81c2b8bdb298b53bc183728c66af9",
-                "reference": "71e3cc71a1f81c2b8bdb298b53bc183728c66af9",
+                "url": "https://api.github.com/repos/smtech/stmarkssmarty/zipball/2940435c1d5f28e13ff38bdda07e05a01b20291d",
+                "reference": "2940435c1d5f28e13ff38bdda07e05a01b20291d",
                 "shasum": ""
             },
             "require": {
@@ -529,7 +530,7 @@
                 }
             ],
             "description": "A standard Smarty install for St. Mark's projects",
-            "time": "2015-08-26 19:31:34"
+            "time": "2015-12-04 02:16:30"
         },
         {
             "name": "spvsoftwareproducts/LTI_Tool_Provider",

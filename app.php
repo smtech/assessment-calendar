@@ -2,6 +2,9 @@
 
 require_once('common.inc.php');
 
+header('Location: assignments-overview.php?account=academics&start=2015-12-14');
+exit;
+
 $cache = new Battis\HierarchicalSimpleCache($sql, basename(__FILE__, '.php'));
 $courseId = $_SESSION['toolProvider']->user->getResourceLink()->settings['custom_canvas_course_id'];
 
@@ -40,15 +43,15 @@ while ($dueDate = $response->fetch_assoc()) {
 	if (empty($assessments[$dueDate['assignment']])) {
 		$assessments[$dueDate['assignment']] = unserialize($dueDate['a.data']);
 	}
-	$dueDates[] = array('student' => $dueDate['student'])
+	$dueDates[] = array('student' => $dueDate['student']);
 }
 
 /* build a month grid */
-$month = (empty($_REQUEST['month']) ? date('m') : $_REQUEST['month']));
+$month = (empty($_REQUEST['month']) ? date('m') : $_REQUEST['month']);
 $year = (empty($_REQUEST['year']) ? date('Y') : $_REQUEST['year']);
 $grid = array();
 $week = 0;
-for ($day = 1; $day <= date('t', strtotime("$year-$month-01"); $i++) {
+for ($day = 1; $day <= date('t', strtotime("$year-$month-01")); $i++) {
 	$day2 = (strlen($day) == 1 ? '0' : '') . $day;
 	$dayOfWeek = date('w', strotime("$year-$month-$day2"));
 	$grid[$week][$dayOfWeek] = date("Y-m-d", strtotime("$year-$month-$day2"));
