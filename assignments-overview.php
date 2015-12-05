@@ -4,7 +4,7 @@ require_once('common.inc.php');
 
 use Battis\HierarchicalSimpleCache;
 $cache = new HierarchicalSimpleCache($sql, basename(__FILE__, '.php'));
-$cache->setLifetime(24*60*60);
+$cache->setLifetime(7*24*60*60);
 
 /* reset the cache for the course placement */
 $sourceCourse = $_SESSION['toolProvider']->user->getResourceLink()->settings['custom_canvas_course_id'];
@@ -91,7 +91,7 @@ try {
 						'bucket' => 'future' // FIXME this won't let us capture past assignments
 					)
 				);
-				$cache->setCache('assignments', $assignments);
+				$cache->setCache('assignments', $assignments, rand(1, 24) * 60 * 60);
 			}
 			foreach($assignments as $assignment) {
 				if(!empty($assignment['published']) && $start <= $assignment['due_at'] && $assignment['due_at'] <= $end) {
@@ -108,6 +108,6 @@ try {
 
 $smarty->assign('allCourses', $masterCourses);
 $smarty->assign('assessments', $assessments);
-$smarty->display('assessments.tpl');
+$smarty->display('assignments-overview.tpl');
 
 ?>

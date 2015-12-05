@@ -154,16 +154,16 @@
         },
         {
             "name": "battis/simplecache",
-            "version": "v1.2",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/battis/simplecache.git",
-                "reference": "2116d33def68ebf3d2a2ad4afd2970077115d801"
+                "reference": "0814e7e1136b19450fd8c5c5f4fcae8663e8f156"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/battis/simplecache/zipball/2116d33def68ebf3d2a2ad4afd2970077115d801",
-                "reference": "2116d33def68ebf3d2a2ad4afd2970077115d801",
+                "url": "https://api.github.com/repos/battis/simplecache/zipball/0814e7e1136b19450fd8c5c5f4fcae8663e8f156",
+                "reference": "0814e7e1136b19450fd8c5c5f4fcae8663e8f156",
                 "shasum": ""
             },
             "type": "library",
@@ -183,7 +183,7 @@
                 }
             ],
             "description": "Manage a simple cache backed by a MySQL database",
-            "time": "2015-10-05 15:13:09"
+            "time": "2015-12-05 12:47:14"
         },
         {
             "name": "educoder/pest",
@@ -341,12 +341,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "e0fc310b6e52d2246cf07fd800ac4a70252bc6c3"
+                "reference": "54fe4327307266d2d974652594e63511ae255561"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/e0fc310b6e52d2246cf07fd800ac4a70252bc6c3",
-                "reference": "e0fc310b6e52d2246cf07fd800ac4a70252bc6c3",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/54fe4327307266d2d974652594e63511ae255561",
+                "reference": "54fe4327307266d2d974652594e63511ae255561",
                 "shasum": ""
             },
             "require": {
@@ -388,7 +388,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-11-25 20:19:23"
+            "time": "2015-12-04 03:11:16"
         },
         {
             "name": "smtech/canvaspest",
