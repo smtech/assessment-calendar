@@ -3,7 +3,7 @@
 {block name="content"}
 
 <div class="container">
-	<ul class="nav nav-tabs" role="tablist">
+	<ul class="nav nav-pills" role="tablist">
 		{assign var="activeTab" value=false}
 		{foreach $departments as $department}
 			<li role="presentation"{if !$activeTab} class="active"{$activeTab = $department['id']}{/if}><a href="#{$department['id']}" aria-controls="{$department['id']}" role="tab" data-toggle="tab">{$department['name']}</a></li>
