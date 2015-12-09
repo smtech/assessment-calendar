@@ -38,10 +38,14 @@ if ($end <= $start) {
 	$end = date('Y-m-d', strtotime("$start +7 days"));
 }
 
-$masterCourses = array();
+$departments = array();
+$allCourses = array();
 $assessments = array();
+
 try {
 	$departments = $cache->getCache('departments');
+	$allCourses = $cache->getCache('courses');
+	$assessments = $cache->getcache(serialize($_REQUEST));
 	if (empty($departments)) {
 		$departments = array();
 		foreach($api->get("accounts/{$accountId}/sub_accounts") as $department) {
@@ -52,61 +56,66 @@ try {
 		}			
 		$cache->setCache('departments', $departments);
 	}
-	$smarty->assign('departments', $departments);
-	foreach ($departments as $department) {
-		$cache->pushKey($department['id']);
-		$courses = $cache->getCache('courses');
-		if (empty($courses)) {
-			$courses = array();
-			// TODO this particular set of parameters restricts us to only current courses (no historical data)
-			foreach($api->get(
-				"accounts/{$department['id']}/courses",
-				array(
-					'with_enrollments' => true,
-					'published' => true,
-					'completed' => false
-				)
-			) as $course) {
-				$courses[$course['id']] = $course;
-			}
-			usort(
-				$courses,
-				function($a, $b) {
-					if ($a['name'] == $b['name']) {
-						return 0;
-					}
-					return ($a['name'] < $b['name'] ? -1 : 1);
-				}
-			);
-			$cache->setCache('courses', $courses);
-		}
-		$masterCourses[$department['id']] = $courses;
-		foreach($courses as $course) {
-			$cache->pushKey($course['id']);
-			$assignments = $cache->getCache('assignments');
-			if (empty($assignments) || $course['id'] == $sourceCourse) {
-				$assignments = $api->get(
-					"courses/{$course['id']}/assignments",
+	
+	if (empty($allCourses) || empty ($assessments)) {
+		foreach ($departments as $department) {
+			$cache->pushKey($department['id']);
+			$courses = $cache->getCache('courses');
+			if (empty($courses)) {
+				$courses = array();
+				// TODO this particular set of parameters restricts us to only current courses (no historical data)
+				foreach($api->get(
+					"accounts/{$department['id']}/courses",
 					array(
-						'bucket' => 'future' // FIXME this won't let us capture past assignments
+						'with_enrollments' => true,
+						'published' => true,
+						'completed' => false
 					)
-				);
-				$cache->setCache('assignments', $assignments, rand(1, 24) * 60 * 60);
-			}
-			foreach($assignments as $assignment) {
-				if(!empty($assignment['published']) && $start <= $assignment['due_at'] && $assignment['due_at'] <= $end) {
-					$assessments[$department['id']][$course['id']][] = $assignment;
+				) as $course) {
+					$courses[$course['id']] = $course;
 				}
+				usort(
+					$courses,
+					function($a, $b) {
+						if ($a['name'] == $b['name']) {
+							return 0;
+						}
+						return ($a['name'] < $b['name'] ? -1 : 1);
+					}
+				);
+				$cache->setCache('courses', $courses);
+			}
+			$allCourses[$department['id']] = $courses;
+			foreach($courses as $course) {
+				$cache->pushKey($course['id']);
+				$assignments = $cache->getCache('assignments');
+				if (empty($assignments) || $course['id'] == $sourceCourse) {
+					$assignments = $api->get(
+						"courses/{$course['id']}/assignments",
+						array(
+							'bucket' => 'future' // FIXME this won't let us capture past assignments
+						)
+					);
+					$cache->setCache('assignments', $assignments, rand(1, 24) * 60 * 60);
+				}
+				foreach($assignments as $assignment) {
+					if(!empty($assignment['published']) && $start <= $assignment['due_at'] && $assignment['due_at'] <= $end) {
+						$assessments[$department['id']][$course['id']][] = $assignment;
+					}
+				}
+				$cache->popKey();
 			}
 			$cache->popKey();
+			$cache->setCache('courses', $allCourses);
+			$cache->setCache(serialize($_REQUEST), $assessments, 60 * 60);
 		}
-		$cache->popKey();
 	}
 } catch (Exception $e) {
 	$smarty->addMessage(get_class($e), $e->getMessage(), NotificationMessage::ERROR);
 }
 
-$smarty->assign('allCourses', $masterCourses);
+$smarty->assign('departments', $departments);
+$smarty->assign('allCourses', $allCourses);
 $smarty->assign('assessments', $assessments);
 $smarty->display('assignments-overview.tpl');
 
