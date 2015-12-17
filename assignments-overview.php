@@ -91,16 +91,34 @@ try {
 				$assignments = $cache->getCache('assignments');
 				if (empty($assignments) || $course['id'] == $sourceCourse) {
 					$assignments = $api->get(
-						"courses/{$course['id']}/assignments",
-						array(
-							'bucket' => 'future' // FIXME this won't let us capture past assignments
-						)
+						"courses/{$course['id']}/assignments"
 					);
 					$cache->setCache('assignments', $assignments, rand(1, 24) * 60 * 60);
 				}
 				foreach($assignments as $assignment) {
-					if(!empty($assignment['published']) && $start <= $assignment['due_at'] && $assignment['due_at'] <= $end) {
-						$assessments[$department['id']][$course['id']][] = $assignment;
+					if(!empty($assignment['published'])) {
+						if (!empty($assignment['due_at']) && $start <= $assignment['due_at'] && $assignment['due_at'] <= $end) {
+							$assessments[$department['id']][$course['id']][] = $assignment;
+						} else {
+							$cache->pushKey('assignments');
+							$details = $cache->getCache($assignment['id']);
+							if (empty($details)) {
+								$details = $api->get(
+									"courses/{$course['id']}/assignments/{$assignment['id']}",
+									array(
+										'all_dates' => true
+									)
+								);
+								$cache->setCache($assignment['id'], $details);
+							}
+							foreach ($details['all_dates'] as $date) {
+								if ($start <= $date['due_at'] && $date['due_at'] <= $end) {
+									$assessments[$department['id']][$course['id']][] = $assignment;
+									break;
+								}
+							}
+							$cache->popKey();
+						}
 					}
 				}
 				$cache->popKey();
