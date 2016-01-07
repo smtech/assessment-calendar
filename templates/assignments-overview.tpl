@@ -3,6 +3,10 @@
 {block name="content"}
 
 <div class="container">
+	<p>{$start} - {$end}</p>
+</div>
+
+<div class="container">
 	<ul class="nav nav-pills" role="tablist">
 		{assign var="activeTab" value=false}
 		{foreach $departments as $department}
@@ -17,7 +21,7 @@
 					{foreach $deptCourses as $course}
 						<div class="panel panel-{if isset($assessments[$deptId][$course['id']])}primary{else}default{/if}">
 							<div class="panel-heading">
-								<p class="panel-title">{$course['name']} <small class="pull-right"><a target="_top" href="{$smarty.session.canvasInstanceUrl}/courses/{$course['id']}/users">Roster</a></small></p>
+								<p class="panel-title"><a href="{$course['html_url']}">{$course['name']}</a> <small class="pull-right"><a target="_top" href="{$smarty.session.canvasInstanceUrl}/courses/{$course['id']}/users">Roster</a></small></p>
 							</div>
 							{if isset($assessments[$deptId][$course['id']])}
 								<div class="panel-body">

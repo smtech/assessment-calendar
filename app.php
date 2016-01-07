@@ -2,7 +2,7 @@
 
 require_once('common.inc.php');
 
-header('Location: assignments-overview.php?account=academics&start=2015-12-14');
+header('Location: assignments-overview.php?account=academics&start=2015-12-14&end=2015-12-19');
 exit;
 
 $cache = new Battis\HierarchicalSimpleCache($sql, basename(__FILE__, '.php'));

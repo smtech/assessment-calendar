@@ -97,7 +97,7 @@ try {
 				}
 				foreach($assignments as $assignment) {
 					if(!empty($assignment['published'])) {
-						if (!empty($assignment['due_at']) && $start <= $assignment['due_at'] && $assignment['due_at'] <= $end) {
+						if ($start <= $assignment['due_at'] && $assignment['due_at'] <= $end) {
 							$assessments[$department['id']][$course['id']][] = $assignment;
 						} else {
 							$cache->pushKey('assignments');
@@ -132,6 +132,8 @@ try {
 	$smarty->addMessage(get_class($e), $e->getMessage(), NotificationMessage::ERROR);
 }
 
+$smarty->assign('start', date('F j, Y', strtotime($start)));
+$smarty->assign('end', date('F j, Y', strtotime($end)));
 $smarty->assign('departments', $departments);
 $smarty->assign('allCourses', $allCourses);
 $smarty->assign('assessments', $assessments);
